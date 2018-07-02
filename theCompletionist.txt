@@ -1,0 +1,49 @@
+
+
+~~~~~~~~~~~~~~//~~~~~~~~~~~~~~~~~
+
+For Prototype (Due July 4, midnight): 
+	- Physics and collision detection (hitbox) should be ready to go
+	- Decide how many levels and what levels will contain
+	- Figure out how to link up levels so that transition between them is easy
+	- Different styles of boss battles(?) (turn based / platform)
+	- Start making/finding sprites/sound files and add to resources
+
+~~~~~~~~~~~~~~//~~~~~~~~~~~~~~~~~
+
+
+
+
+Boss levels: 
+	- *Sans (mechanic 1 - dodging shit)
+	- FFIV Boss (mechanic 2 - turn based)
+	- *Bowser (mechanic 3 - platform)
+	- Castlevania(?)
+	- Megaman (yellow devil maybe)
+	- *Sinistar
+
+
+
+
+Concerns:
+	- Have to have a main mechanic so that it doesn't get too hectic
+		- Make simple so that bosses and character is limited to D-Pad and 2 buttons
+	- Sprites
+		- finding them might be hard
+
+
+Ideas:
+	- Constant health bar - health doesn't regen per level; stays the same throughout
+	- Same sprite throughout(can be super generic lookin dude)
+	- 
+
+
+Classes we need:
+	- Class for main character (extend AnimatedSprite class)
+	- Event (for health)
+	- physics when neeeded
+	- tweening 
+	- general interface for each level that has controls, physics 
+	- level manager class
+	- sound manager
+
