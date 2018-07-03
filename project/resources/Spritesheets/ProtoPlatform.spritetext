@@ -1,12 +1,12 @@
 FRAME
 0
 0
-25
-38
+41
+8
 ADD
 
 ANIMATION
-ProtoPlayer
+ProtoPlatform
 0
 0
 1
@@ -16,6 +16,6 @@ ADD
 HITBOX
 0
 0
-25
-38
+41
+8
 ADD

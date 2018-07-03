@@ -1,8 +1,5 @@
 package edu.virginia.engine.display;
 
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -149,8 +146,8 @@ public class AnimatedSprite extends Sprite
 				case "Rectangle":
 					shape = HitBoxType.RECTANGLE;
 					break;
-				case "Ellipse":
-					shape = HitBoxType.ELLIPSE;
+				case "Cirle":
+					shape = HitBoxType.CIRCLE;
 					break;
 				}
 				var = SetVarStage.X;
@@ -269,11 +266,8 @@ public class AnimatedSprite extends Sprite
 		switch(shape)
 		{
 		case RECTANGLE:
-			this.addSubHitBox("Rect", new Rectangle(newFrameX, newFrameY, newFrameWidth, newFrameHeight), new AffineTransform());
 			break;
-		case ELLIPSE:
-			this.addSubHitBox("Elli", new Ellipse2D.Double(newFrameX, newFrameY, newFrameWidth/2, newFrameHeight/2),  new AffineTransform());
-			break;
+		case 
 		}
 	}
 	

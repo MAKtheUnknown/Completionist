@@ -1,21 +1,14 @@
 FRAME
 0
 0
-25
-38
+17
+16
 ADD
 
 ANIMATION
-ProtoPlayer
+ProtoBox
 0
 0
 1
 false
-ADD
-
-HITBOX
-0
-0
-25
-38
 ADD

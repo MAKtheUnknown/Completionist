@@ -1,8 +1,5 @@
 package edu.virginia.engine.display;
 
-import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -44,8 +41,6 @@ public class AnimatedSprite extends Sprite
 	int currentFrameIndex;
 	BufferedImage currentFrame;
 	double timer = 0;
-	
-	HitBoxType shape;
 	
 	/**
 	 * 
@@ -143,18 +138,6 @@ public class AnimatedSprite extends Sprite
 				newAnimationRepeats = Boolean.parseBoolean(s);
 				var = SetVarStage.NONE;
 				break;
-			case SHAPE:
-				switch(s)
-				{
-				case "Rectangle":
-					shape = HitBoxType.RECTANGLE;
-					break;
-				case "Ellipse":
-					shape = HitBoxType.ELLIPSE;
-					break;
-				}
-				var = SetVarStage.X;
-				break;
 			}
 			
 			switch(s)
@@ -169,7 +152,6 @@ public class AnimatedSprite extends Sprite
 				break;
 			case "HITBOX":
 				stage = CreationStage.HITBOX;
-				var = SetVarStage.SHAPE;
 				break;
 			case "ADD":
 				switch(stage)
@@ -179,9 +161,6 @@ public class AnimatedSprite extends Sprite
 					break;
 				case ANIMATION:
 					addAnimation(newAnimationName, newAnimationStart, newAnimationStop, newAnimationRate, newAnimationRepeats);
-					break;
-				case HITBOX:
-					addHitBox(shape, newFrameX, newFrameY, newFrameWidth, newFrameHeight);
 					break;
 				}
 			}
@@ -198,7 +177,6 @@ public class AnimatedSprite extends Sprite
 		}
 	}
 	
-
 	/**
 	 * 
 	 * Set animation using the name specified in the text file.
@@ -264,18 +242,6 @@ public class AnimatedSprite extends Sprite
 	{
 		animations.put(name, new AnimationIndecies(start, stop, rate, repeats));
 	}
-	private void addHitBox(HitBoxType shape, int newFrameX, int newFrameY, int newFrameWidth, int newFrameHeight) 
-	{
-		switch(shape)
-		{
-		case RECTANGLE:
-			this.addSubHitBox("Rect", new Rectangle(newFrameX, newFrameY, newFrameWidth, newFrameHeight), new AffineTransform());
-			break;
-		case ELLIPSE:
-			this.addSubHitBox("Elli", new Ellipse2D.Double(newFrameX, newFrameY, newFrameWidth/2, newFrameHeight/2),  new AffineTransform());
-			break;
-		}
-	}
 	
 	
 	private void incrementAnimation()
@@ -317,7 +283,7 @@ public class AnimatedSprite extends Sprite
 		}
 	}
 	
-	private enum CreationStage
+	enum CreationStage
 	{
 		HEADER,
 		FRAME,
@@ -326,7 +292,7 @@ public class AnimatedSprite extends Sprite
 		ADD
 	}
 	
-	private enum SetVarStage
+	enum SetVarStage
 	{
 		NONE,
 		X,
@@ -337,14 +303,7 @@ public class AnimatedSprite extends Sprite
 		START,
 		STOP,
 		RATE,
-		REPEATS,
-		SHAPE,
-	}
-	
-	private enum HitBoxType
-	{
-		RECTANGLE,
-		ELLIPSE
+		REPEATS
 	}
 	
 
