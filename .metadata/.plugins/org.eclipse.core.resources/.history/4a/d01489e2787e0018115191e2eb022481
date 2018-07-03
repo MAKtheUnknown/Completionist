@@ -21,13 +21,7 @@ public class PlatformerLevel extends Level
 	@Override
 	public void controls(ArrayList<Integer> pressedKeys) 
 	{
-		for(Integer key : pressedKeys)
-		{
-			switch(key)
-			{
-			
-			}
-		}
+		
 		
 	}
 
