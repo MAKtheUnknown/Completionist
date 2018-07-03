@@ -12,3 +12,11 @@ ProtoPlayer
 1
 false
 ADD
+
+HITBOX
+0
+0
+25
+38
+38
+ADD

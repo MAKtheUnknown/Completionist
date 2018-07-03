@@ -8,4 +8,9 @@
 <fullyQualifiedTypeName name="edu.virginia.engine.events.IEventListener"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="edu.virginia.engine.display.DisplayObjectContainer"/>
+<fullyQualifiedTypeName name="edu.virginia.engine.physics.PhysicalSprite"/>
+<fullyQualifiedTypeName name="java.awt.geom.AffineTransform"/>
+<fullyQualifiedTypeName name="java.awt.Rectangle"/>
+<fullyQualifiedTypeName name="java.awt.geom.Ellipse2D.Double"/>
+<fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
 </qualifiedTypeNameHistroy>
