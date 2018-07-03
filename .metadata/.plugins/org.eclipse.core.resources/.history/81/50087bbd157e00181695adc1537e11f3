@@ -1,0 +1,26 @@
+package completionist;
+
+import java.awt.event.KeyListener;
+import java.util.ArrayList;
+
+import edu.virginia.engine.display.DisplayObjectContainer;
+import edu.virginia.engine.events.EventDispatcher;
+
+public abstract class Level extends EventDispatcher
+{
+	
+
+	public PlayerCharacter player;
+	
+	public DisplayObjectContainer view;
+	
+	public Level(String id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public abstract void controls(ArrayList<Integer> pressedKeys);
+	
+	public abstract void update();
+
+}

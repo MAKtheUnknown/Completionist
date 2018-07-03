@@ -1,0 +1,10 @@
+package completionist;
+
+import java.awt.event.KeyListener;
+
+public abstract class IEnvironment implements KeyListener 
+{
+	public abstract void controls();
+	
+
+}
