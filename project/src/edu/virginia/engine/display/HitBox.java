@@ -29,6 +29,7 @@ public class HitBox extends EventDispatcher
 		this.box = box;
 		
 		offset = new AffineTransform();
+		
 	}
 	
 	public HitBox(String id, Shape box, AffineTransform offset)
@@ -103,12 +104,14 @@ public class HitBox extends EventDispatcher
 	{
 		//Shape transformedShape = this.offset.createTransformedShape(box);
 		//g2d.draw(transformedShape);
-		
+		AffineTransform save = g2d.getTransform();
+		g2d.setTransform(new AffineTransform());
 		g2d.draw(box);
 		for(HitBox b : subBoxes)
 		{
 			b.draw(g2d);
 		}
+		g2d.setTransform(save);
 	}
 	
 	public HitBox getChild(String id)

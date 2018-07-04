@@ -37,6 +37,8 @@ public abstract class Level extends EventDispatcher
 	public abstract void controls(ArrayList<Integer> pressedKeys);
 	
 	public abstract void update();
+	
+	public abstract void tearDown();
 
 	public PlayerCharacter getPlayer() {
 		return player;

@@ -139,9 +139,34 @@ public class DisplayObject {
 		
 		if(hitBox != null && o.hitBox != null)
 		{
-			return this.hitBox.collidesWith(o.hitBox);
+			if(this.hitBox.collidesWith(o.hitBox))
+			{
+				return true;
+			}
+				
 		}
+		
+		for(HitBox hbThis : hitBox.subBoxes)
+		{
+			if(hbThis.collidesWith(o.hitBox))
+			{
+				return true;
+			}
+			
+			for(HitBox hbO : o.hitBox.subBoxes)
+			{
+				if(hbThis.collidesWith(hbO))
+				{
+					return true;
+				}
+			}
+		}
+		
+		
+		
+		
 		return false;
+		
 	}
 	
 	/**

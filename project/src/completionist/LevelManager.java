@@ -55,6 +55,14 @@ public class LevelManager extends Game
 			e.printStackTrace();
 		}
 		
+		player.setPivotPoint(14, 18);
+		
+		Level sinistar = new SinistarLevel("IAMSINISTAR");
+		currentLevel = sinistar;
+		currentLevel.setPlayer(player);
+		currentLevel.init();
+		//currentLevel.addEventListener(bossBeatenCheck, "BOSS_DEFEATED");
+		levels.add(sinistar);
 		player.setAnimation("ProtoPlayer");
 		this.addChild(player);
 	}
@@ -79,6 +87,7 @@ public class LevelManager extends Game
 	
 	public void nextLevel()
 	{
+		currentLevel.tearDown();
 		levels.remove(currentLevel);
 		
 		Random randPaul = new Random();
